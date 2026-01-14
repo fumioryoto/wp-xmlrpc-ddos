@@ -26,6 +26,11 @@ Data exposure
 
 Logic flaw
 
+**Usage**
+Add target in **xmlrpcdos.py** by replacing example.con to targated site.
+```bash
+req = urllib.request.Request('https://example.com/xmlrpc.php', data=data)
+```
 **How the Script Works**
 1. XML Payload Construction
 
