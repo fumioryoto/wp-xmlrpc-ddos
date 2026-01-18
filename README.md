@@ -33,7 +33,7 @@ req = urllib.request.Request('https://example.com/xmlrpc.php', data=data)
 ```
 **Save it and Run**
 ```bash
-python3 xmlrpcdos.py
+python3 xmlrpcdos.py https://example.com/xmlrpc.php
 ```
 **How the Script Works**
 1. XML Payload Construction
