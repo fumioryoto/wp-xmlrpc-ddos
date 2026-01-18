@@ -4,19 +4,19 @@
 # Author: Nahid 
 # This is a Proof of Concept Exploit, Please use responsibly.
 #################################################################################
-grey=$(printf '\x1b[1;30m'); red=$(printf '\x1b[1;31m'); green=$(printf '\x1b[1;32m')
-yellow=$(printf '\x1b[1;33m'); default=$(printf '\x1b[1;0m')
-
-limit=100
-
 function banner() {
+    local width=56
+
     echo "+--------------------------------------------------------+"
-    echo "|    ${grey}xmlrpc-ddos${default}                        |"
-    echo "|   ${yellow}CVE-2018-6389${default}                     |"
-    echo "|   ${red}Author: Nahid${default}                        |"
-    echo "|   ${red}Link  : https://fumioryoto.github.io${default} |"
+    printf "|   %-${width}s |\n" "${grey}xmlrpc-ddos${default}"
+    printf "|   %-${width}s |\n" "${yellow}CVE-2018-6389${default}"
+    printf "|   %-${width}s |\n" "${red}Author: Nahid${default}"
+    printf "|   %-${width}s |\n" "${red}Link  : https://fumioryoto.github.io${default}"
+    printf "|   %-${width}s |\n" "${red}Usage : chmod +x main.sh${default}"
+    printf "|   %-${width}s |\n" "${red}Usage : ./main.sh <url>${default}"
     echo "+--------------------------------------------------------+"
 }
+
 import threading
 import time
 import urllib.request
