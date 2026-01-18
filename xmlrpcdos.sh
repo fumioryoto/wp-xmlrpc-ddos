@@ -14,6 +14,8 @@ function banner() {
     echo "|   ${yellow}CVE-2018-6389${default}                     |"
     echo "|   ${red}Author: Nahid${default}                        |"
     echo "|   ${red}Link  : https://fumioryoto.github.io${default} |"
+    echo "|   ${red}Usage : chmod +x main.sh                       |"
+    echo "|   ${red}Usage : ./main.sh <url>                        |"
     echo "+--------------------------------------------------------+"
 }
 
