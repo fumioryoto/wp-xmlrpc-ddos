@@ -28,9 +28,16 @@ Data exposure
 Logic flaw
 
 ***Usage***
-** Run **
+
+**Run xmlrpc.py using**
 ```bash
 python3 xmlrpcdos.py https://example.com/xmlrpc.php
+```
+
+**Run xmlrpc.sh by**
+```bash
+chmod +x xmlrpcdos.sh
+./xmlrpc.sh https://example.com/xmlrpc.php
 ```
 **How the Script Works**
 1. XML Payload Construction
