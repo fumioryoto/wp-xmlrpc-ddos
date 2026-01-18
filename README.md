@@ -1,4 +1,5 @@
 **XML-RPC XML Entity Expansion DoS (Legacy PoC)**
+![Alt text for the screenshot](/Assets/Screenshot.png)
 
 **Overview**
 
