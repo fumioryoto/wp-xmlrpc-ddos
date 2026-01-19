@@ -39,6 +39,7 @@ python3 xmlrpcdos.py https://example.com/xmlrpc.php
 chmod +x xmlrpcdos.sh
 ./xmlrpc.sh https://example.com/xmlrpc.php
 ```
+![Alt text for the screenshot](/Assets/Screenshot2.png)
 **How the Script Works**
 1. XML Payload Construction
 
